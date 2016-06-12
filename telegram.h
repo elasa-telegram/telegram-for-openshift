@@ -16,9 +16,30 @@
 
     Copyright Vitaly Valtman 2013-2015
 */
+char * conf_dir(void){
+    const char * CONFIG = getenv("OPENSHIFT_REPO_DIR");
+//const char * PROG_NAME2 = getenv("PROG_NAME");
+char* PROG_NAME2;
+//CONFIG = getenv ("OPENSHIFT_REPO_DIR");
+if (CONFIG!=NULL){
+    printf ("The current CONFIG is: %s",CONFIG);
+    PROG_NAME2=CONFIG;
+    #define PROG_NAME PROG_NAME2 ;
+    #ifndef CONFIG_DIRECTORY
+        #define CONFIG_DIRECTORY  PROG_NAME;
+    #endif
+}
+else{
+    #define PROG_NAME "telegram-cli"
+    #ifndef CONFIG_DIRECTORY
+        #define CONFIG_DIRECTORY "." PROG_NAME;
+    #endif
+}
+}
 
 #ifndef PROG_NAME
-    #define PROG_NAME "telegram-cli"
+    conf_dir();
+    //#define PROG_NAME "telegram-cli"
 
 #endif
 
