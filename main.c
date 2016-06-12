@@ -75,7 +75,6 @@
 #define VERSION "0.07"
 
 
-
 #define CONFIG_FILE "/var/lib/openshift/571622c40c1e66cf8d000066/app-root/runtime/srv/telegram"
 /*
 #define LOG_ENV           \
