@@ -77,6 +77,19 @@
 
 
 //#define CONFIG_FILE "config"
+#define LOG_ENV           \
+    do {                     \
+        const char * CONFIG = getenv("OPENSHIFT_REPO_DIR");\
+        \
+    if (CONFIG!=NULL){\
+        printf ("The current CONFIG is: %s",CONFIG);\
+        #define CONFIG_DIRECTORY  CONFIG\
+    }\
+    else{\
+        printf ("CONFIG_DIRECTORY: . %s",PROG_NAME);\
+        #define CONFIG_DIRECTORY "." PROG_NAME\
+    }    \
+    }\
 #define CONFIG_FILE getenv ("OPENSHIFT_REPO_DIR")
 #define AUTH_KEY_FILE "auth"
 #define STATE_FILE "state"
