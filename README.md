@@ -32,6 +32,17 @@ Python support is currently limited to Python 2.7 or Python 3.1+. Other versions
 
 Install libs: readline, openssl and (if you want to use config) libconfig, liblua, python and libjansson.
 If you do not want to use them pass options --disable-libconfig, --disable-liblua, --disable-python and --disable-json respectively.
+On OPenshift RHC:
+```shel
+     mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv
+     export TELEGRAM_CONFIG_DIR=${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/telegram
+	 git clone --recursive https://github.com/vysheng/tg.git && mv tg/* . && rm -rf tg
+	 #git clone --recursive https://github.com/elasa-telegram/telegram-for-openshift.git && mv telegram-for-openshift/* . && rm -rf telegram-for-openshift 
+	 ./configure --prefix=${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/telegram  --disable-libconfig  --disable-json
+	 make
+```
+SO the telegram could be running by this code:
+     `cd cd ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/telegram\bin && ./telegram-cli`
 
 On Ubuntu/Debian use: 
 
