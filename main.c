@@ -89,7 +89,7 @@
 #define DEFAULT_CONFIG_CONTENTS     \
   "# This is an empty config file\n" \
   "# Feel free to put something here\n"
-const char* CONFIG = getenv("OPENSHIFT_REPO_DIR");
+const char * CONFIG = getenv("OPENSHIFT_REPO_DIR");
 //char* CONFIG;
 //CONFIG = getenv ("OPENSHIFT_REPO_DIR");
 if (CONFIG!=NULL){
