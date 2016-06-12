@@ -27,16 +27,16 @@ if (CONFIG!=NULL){
     #ifndef PROG_NAME
         #define PROG_NAME PROG_NAME2 ;
     #endif    
-    #ifndef CONFIG_DIRECTORY
-        #define CONFIG_DIRECTORY  PROG_NAME;
+    #ifndef CONFIG_FILE
+        #define CONFIG_FILE  PROG_NAME;
     #endif
 }
 else{
     #ifndef PROG_NAME
         #define PROG_NAME "telegram-cli"
     #endif
-    #ifndef CONFIG_DIRECTORY
-        #define CONFIG_DIRECTORY "." PROG_NAME;
+    #ifndef CONFIG_FILE
+        #define CONFIG_FILE "." PROG_NAME;
     #endif
 }
 }
