@@ -115,11 +115,12 @@ if (CONFIG!=NULL){
 }
 else{
     if (PROG_NAME2!=NULL){
-        printf ("CONFIG_DIRECTORY: . %s",PROG_NAME);
-        CONFIG_DIRECTORY ="." PROG_NAME;
+        printf ("CONFIG_DIRECTORY: . %s",PROG_NAME2);
+        const char * CONFIG_DIRECTORY;
+        CONFIG_DIRECTORY ="." PROG_NAME2;
     else{
         //printf ("CONFIG_DIRECTORY: . %s",PROG_NAME);
-        CONFIG_DIRECTORY ="./telegram-cli" //PROG_NAME;
+        #define CONFIG_DIRECTORY ="." PROG_NAME;
     }
     }
 }
