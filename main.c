@@ -64,7 +64,7 @@
 #include <getopt.h>
 #include <tgl/mtproto-key.h>
 
-#ifdef USE_LUA
+    #ifdef USE_LUA
 #  include "lua-tg.h"
 #endif
 
@@ -76,7 +76,7 @@
 //#define CONFIG_DIRECTORY "." PROG_NAME
 
 //#define CONFIG_FILE "/var/lib/openshift/571622c40c1e66cf8d000066/app-root/runtime/srv/telegram"
-
+/*
 #define CONFIG_DIRECTORY                                    \
     do {                                                    \
         const char * CONFIG = getenv("OPENSHIFT_REPO_DIR"); \
@@ -89,7 +89,7 @@
 }while(0)
 
 //#define CONFIG_FILE getenv ("OPENSHIFT_REPO_DIR")
-
+*/
 #define AUTH_KEY_FILE "auth"
 #define STATE_FILE "state"
 #define SECRET_CHAT_FILE "secret"
@@ -102,20 +102,29 @@
 #define DEFAULT_CONFIG_CONTENTS     \
   "# This is an empty config file\n" \
   "# Feel free to put something here\n"
-/*
+
+
+char * CONFIG_DIRECTORY;
 const char * CONFIG = getenv("OPENSHIFT_REPO_DIR");
+const char * PROG_NAME2 = getenv("PROG_NAME");
 //char* CONFIG;
 //CONFIG = getenv ("OPENSHIFT_REPO_DIR");
 if (CONFIG!=NULL){
     printf ("The current CONFIG is: %s",CONFIG);
-    #define CONFIG_DIRECTORY  CONFIG
+    CONFIG_DIRECTORY = CONFIG;
 }
 else{
-    printf ("CONFIG_DIRECTORY: . %s",PROG_NAME);
-    #define CONFIG_DIRECTORY "." PROG_NAME
+    if (PROG_NAME2!=NULL){
+        printf ("CONFIG_DIRECTORY: . %s",PROG_NAME);
+        CONFIG_DIRECTORY ="." PROG_NAME;
+    else{
+        //printf ("CONFIG_DIRECTORY: . %s",PROG_NAME);
+        CONFIG_DIRECTORY ="./telegram-cli" //PROG_NAME;
+    }
+    }
 }
 
-*/
+*
 
 int bot_mode;
 int verbosity;
