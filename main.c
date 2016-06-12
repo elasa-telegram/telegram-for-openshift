@@ -73,17 +73,6 @@
 
 #define PROGNAME "telegram-cli"
 #define VERSION "0.07"
-const char* CONFIG = getenv("OPENSHIFT_REPO_DIR");
-//char* CONFIG;
-//CONFIG = getenv ("OPENSHIFT_REPO_DIR");
-if (CONFIG!=NULL){
-    printf ("The current CONFIG is: %s",CONFIG);
-}
-else{
-    printf ("CONFIG_DIRECTORY: . %s",PROG_NAME);
-    #define CONFIG_DIRECTORY "." PROG_NAME
-}
-
 
 
 
@@ -100,6 +89,18 @@ else{
 #define DEFAULT_CONFIG_CONTENTS     \
   "# This is an empty config file\n" \
   "# Feel free to put something here\n"
+const char* CONFIG = getenv("OPENSHIFT_REPO_DIR");
+//char* CONFIG;
+//CONFIG = getenv ("OPENSHIFT_REPO_DIR");
+if (CONFIG!=NULL){
+    printf ("The current CONFIG is: %s",CONFIG);
+    #define CONFIG_DIRECTORY  CONFIG
+}
+else{
+    printf ("CONFIG_DIRECTORY: . %s",PROG_NAME);
+    #define CONFIG_DIRECTORY "." PROG_NAME
+}
+
 
 int bot_mode;
 int verbosity;
