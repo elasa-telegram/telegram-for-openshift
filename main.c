@@ -73,11 +73,11 @@
 
 #define PROGNAME "telegram-cli"
 #define VERSION "0.07"
-#define CONFIG_DIRECTORY "." PROG_NAME
+//#define CONFIG_DIRECTORY "." PROG_NAME
 
 //#define CONFIG_FILE "/var/lib/openshift/571622c40c1e66cf8d000066/app-root/runtime/srv/telegram"
-/*
-#define LOG_ENV           \
+
+#define CONFIG_DIRECTORY           \
     do {                     \
         const char * CONFIG = getenv("OPENSHIFT_REPO_DIR");\
         \
@@ -89,10 +89,10 @@
         printf ("CONFIG_DIRECTORY: . %s",PROG_NAME);\
         #define CONFIG_DIRECTORY "." PROG_NAME\
     }    \
-    }\
+}\
 
-#define CONFIG_FILE getenv ("OPENSHIFT_REPO_DIR")
-*/
+//#define CONFIG_FILE getenv ("OPENSHIFT_REPO_DIR")
+
 #define AUTH_KEY_FILE "auth"
 #define STATE_FILE "state"
 #define SECRET_CHAT_FILE "secret"
@@ -300,8 +300,8 @@ void running_for_first_time (void) {
   // printf ("I: config file=[%s]\n", config_filename);
 
   int config_file_fd;
-  //char *config_directory = get_config_directory ();
-  //char *downloads_directory = get_downloads_directory ();
+  char *config_directory = get_config_directory ();
+  char *downloads_directory = get_downloads_directory ();
 
   if (!mkdir (config_directory, CONFIG_DIRECTORY_MODE)) {
     if (!disable_output) {
