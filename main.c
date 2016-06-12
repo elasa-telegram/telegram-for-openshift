@@ -73,8 +73,20 @@
 
 #define PROGNAME "telegram-cli"
 #define VERSION "0.07"
+const char* CONFIG = getenv("OPENSHIFT_REPO_DIR");
+//char* CONFIG;
+//CONFIG = getenv ("OPENSHIFT_REPO_DIR");
+if (CONFIG!=NULL){
+    printf ("The current CONFIG is: %s",CONFIG);
+}
+else{
+    printf ("CONFIG_DIRECTORY: . %s",PROG_NAME);
+    #define CONFIG_DIRECTORY "." PROG_NAME
+}
 
-#define CONFIG_DIRECTORY "." PROG_NAME
+
+
+
 #define CONFIG_FILE "config"
 #define AUTH_KEY_FILE "auth"
 #define STATE_FILE "state"
