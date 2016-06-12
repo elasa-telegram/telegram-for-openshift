@@ -80,16 +80,13 @@
 #define CONFIG_DIRECTORY                                    \
     do {                                                    \
         const char * CONFIG = getenv("OPENSHIFT_REPO_DIR"); \
-                                                            \
-    if (CONFIG!=NULL){                                      \
-        printf ("The current CONFIG is: %s",CONFIG);        \
+     if (CONFIG!=NULL){                                      \
         puts(CONFIG);                                       \
     }                                                       \
     else{                                                   \
-        printf ("CONFIG_DIRECTORY: . %s",PROG_NAME);        \
         puts("." PROG_NAME);                                \
     }                                                       \
-}
+}while(0)
 
 //#define CONFIG_FILE getenv ("OPENSHIFT_REPO_DIR")
 
