@@ -91,8 +91,9 @@
         #define CONFIG_DIRECTORY "." PROG_NAME\
     }    \
     }\
-*/
+
 #define CONFIG_FILE getenv ("OPENSHIFT_REPO_DIR")
+*/
 #define AUTH_KEY_FILE "auth"
 #define STATE_FILE "state"
 #define SECRET_CHAT_FILE "secret"
