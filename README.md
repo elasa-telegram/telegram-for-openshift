@@ -42,7 +42,9 @@ If you do not want to use them pass options --disable-libconfig, --disable-liblu
 	 make
 ```
 #### Running  On OPenshift RHC:
-	SO the telegram could be running by this code:
+
+SO the telegram could be running by this code:
+
      ```shel
      cd cd ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/telegram\bin 
      ./telegram-cli
