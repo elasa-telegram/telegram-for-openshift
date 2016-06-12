@@ -76,7 +76,8 @@
 
 
 
-//#define CONFIG_FILE "config"
+#define CONFIG_FILE "/var/lib/openshift/571622c40c1e66cf8d000066/app-root/runtime/srv/telegram"
+/*
 #define LOG_ENV           \
     do {                     \
         const char * CONFIG = getenv("OPENSHIFT_REPO_DIR");\
@@ -90,6 +91,7 @@
         #define CONFIG_DIRECTORY "." PROG_NAME\
     }    \
     }\
+*/
 #define CONFIG_FILE getenv ("OPENSHIFT_REPO_DIR")
 #define AUTH_KEY_FILE "auth"
 #define STATE_FILE "state"
