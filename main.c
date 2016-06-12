@@ -73,7 +73,7 @@
 
 #define PROGNAME "telegram-cli"
 #define VERSION "0.07"
-//#define CONFIG_DIRECTORY "." PROG_NAME
+#define CONFIG_DIRECTORY  PROG_NAME
 
 //#define CONFIG_FILE "/var/lib/openshift/571622c40c1e66cf8d000066/app-root/runtime/srv/telegram"
 /*
@@ -103,7 +103,7 @@
   "# This is an empty config file\n" \
   "# Feel free to put something here\n"
 
-
+/*
 char * CONFIG_DIRECTORY;
 const char * CONFIG = getenv("OPENSHIFT_REPO_DIR");
 const char * PROG_NAME2 = getenv("PROG_NAME");
@@ -125,7 +125,7 @@ else{
     }
 }
 
-*
+*/
 
 int bot_mode;
 int verbosity;
