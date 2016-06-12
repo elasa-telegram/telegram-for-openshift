@@ -19,7 +19,7 @@
 char * conf_dir(void){
     const char * CONFIG = getenv("OPENSHIFT_REPO_DIR");
 //const char * PROG_NAME2 = getenv("PROG_NAME");
-char* PROG_NAME2;
+const  char* PROG_NAME2;
 //CONFIG = getenv ("OPENSHIFT_REPO_DIR");
 if (CONFIG!=NULL){
     printf ("The current CONFIG is: %s",CONFIG);
