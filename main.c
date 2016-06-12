@@ -73,9 +73,9 @@
 
 #define PROGNAME "telegram-cli"
 #define VERSION "0.07"
+#define CONFIG_DIRECTORY "." PROG_NAME
 
-
-#define CONFIG_FILE "/var/lib/openshift/571622c40c1e66cf8d000066/app-root/runtime/srv/telegram"
+//#define CONFIG_FILE "/var/lib/openshift/571622c40c1e66cf8d000066/app-root/runtime/srv/telegram"
 /*
 #define LOG_ENV           \
     do {                     \
@@ -223,6 +223,10 @@ char *get_config_directory (void) {
   char *config_directory;
   config_directory = getenv("TELEGRAM_CONFIG_DIR");
   if (!str_empty (config_directory)) { return tstrdup (config_directory); }
+  //openshift added
+  config_directory = getenv("OPENSHIFT_REPO_DIR");
+  if (!str_empty (config_directory)) { return tstrdup (config_directory); }
+  
   // XDG: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
   config_directory = getenv("XDG_CONFIG_HOME");
   if (!str_empty (config_directory)) {
