@@ -24,13 +24,17 @@ char* PROG_NAME2;
 if (CONFIG!=NULL){
     printf ("The current CONFIG is: %s",CONFIG);
     PROG_NAME2=CONFIG;
-    #define PROG_NAME PROG_NAME2 ;
+    #ifndef PROG_NAME
+        #define PROG_NAME PROG_NAME2 ;
+    #endif    
     #ifndef CONFIG_DIRECTORY
         #define CONFIG_DIRECTORY  PROG_NAME;
     #endif
 }
 else{
-    #define PROG_NAME "telegram-cli"
+    #ifndef PROG_NAME
+        #define PROG_NAME "telegram-cli"
+    #endif
     #ifndef CONFIG_DIRECTORY
         #define CONFIG_DIRECTORY "." PROG_NAME;
     #endif
