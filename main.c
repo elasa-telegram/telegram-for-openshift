@@ -76,7 +76,8 @@
 
 
 
-#define CONFIG_FILE "config"
+//#define CONFIG_FILE "config"
+#define CONFIG_FILE getenv ("OPENSHIFT_REPO_DIR")
 #define AUTH_KEY_FILE "auth"
 #define STATE_FILE "state"
 #define SECRET_CHAT_FILE "secret"
@@ -89,6 +90,7 @@
 #define DEFAULT_CONFIG_CONTENTS     \
   "# This is an empty config file\n" \
   "# Feel free to put something here\n"
+/*
 const char * CONFIG = getenv("OPENSHIFT_REPO_DIR");
 //char* CONFIG;
 //CONFIG = getenv ("OPENSHIFT_REPO_DIR");
@@ -101,6 +103,7 @@ else{
     #define CONFIG_DIRECTORY "." PROG_NAME
 }
 
+*/
 
 int bot_mode;
 int verbosity;
