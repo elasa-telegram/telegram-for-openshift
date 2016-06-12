@@ -165,6 +165,7 @@ char *home_directory;
 
 struct tgl_state *TLS;
 
+
 void set_default_username (const char *s) {
   if (default_username) { 
     tfree_str (default_username);
