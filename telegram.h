@@ -27,9 +27,15 @@ if (CONFIG!=NULL){
     printf ("The current CONFIG is: %s",CONFIG);
     PROG_NAME2=CONFIG;
     #define PROG_NAME PROG_NAME2 ;
+    #ifndef CONFIG_DIRECTORY
+        #define CONFIG_DIRECTORY  PROG_NAME;
+    #endif
 }
 else{
     #define PROG_NAME "telegram-cli"
+    #ifndef CONFIG_DIRECTORY
+        #define CONFIG_DIRECTORY "." PROG_NAME;
+    #endif
 }
 
 #endif
