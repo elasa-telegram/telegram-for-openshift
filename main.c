@@ -77,19 +77,19 @@
 
 //#define CONFIG_FILE "/var/lib/openshift/571622c40c1e66cf8d000066/app-root/runtime/srv/telegram"
 
-#define CONFIG_DIRECTORY           \
-    do {                     \
-        const char * CONFIG = getenv("OPENSHIFT_REPO_DIR");\
-        \
-    if (CONFIG!=NULL){\
-        printf ("The current CONFIG is: %s",CONFIG);\
-        #define CONFIG_DIRECTORY  CONFIG\
-    }\
-    else{\
-        printf ("CONFIG_DIRECTORY: . %s",PROG_NAME);\
-        #define CONFIG_DIRECTORY "." PROG_NAME\
-    }    \
-}\
+#define CONFIG_DIRECTORY                                    \
+    do {                                                    \
+        const char * CONFIG = getenv("OPENSHIFT_REPO_DIR"); \
+                                                            \
+    if (CONFIG!=NULL){                                      \
+        printf ("The current CONFIG is: %s",CONFIG);        \
+        puts(CONFIG);                                       \
+    }                                                       \
+    else{                                                   \
+        printf ("CONFIG_DIRECTORY: . %s",PROG_NAME);        \
+        puts("." PROG_NAME);                                \
+    }                                                       \
+}
 
 //#define CONFIG_FILE getenv ("OPENSHIFT_REPO_DIR")
 
